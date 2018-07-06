@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/css.css">
+    <title>Styleguide</title>
+    <meta name="theme-color" content="#ee7f00">
+    <meta name="MobileOptimized" content="width"/>
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+
+    <script src="/js/jquery.min.js"></script>
+</head>
+<body class="styleguide">
+<aside>
+    <div class="logo"></div>
+    <nav>
+        <a href="/">Home</a>
+        {% block menu %}
+            <ul>
+                <li><a href="/components/atoms/atoms.html">Atoms</a></li>
+                <li><a href="/components/molecules/molecules.html">Molecules</a></li>
+                <li><a href="/components/organisms/organisms.html">Organisms</a></li>
+                <li><a href="/components/templates/templates.html">Templates</a></li>
+                <li><a href="/components/pages/pages.html">Pages</a></li>
+            </ul>
+        {% endblock %}
+    </nav>
+</aside>
+<main>
+    <header>
+        <h1>{% block title %}Styleguide for 3+{% endblock %}</h1>
+    </header>
+    {% block main %}<p style="margin-top: 70px">Choose something from the left</p>{% endblock %}
+</main>
+<script>
+	//THIS IS ONLY FOR THE STYLEGUIDE / CATALOGUE
+	(function($) {//save away the bling
+		$(function() {//document ready shorthand
+			if ($(window).width() > 600) {
+				$('.example').each(function() {
+					$(this).next('pre').find('code').text($(this).html().trim().replace(/^[ ]{8}/gm, ''));
+				});
+			}
+
+			$.getScript("/js/prism.js");
+		});
+	})(jQuery);
+</script>
+</body>
+</html>

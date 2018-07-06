@@ -1,0 +1,130 @@
+@import 'functions';
+
+//comment out the next line for white label test
+//@import 'wiwo';
+
+// =============================================================================
+// COLORS
+// =============================================================================
+$white: #fff !global; //sass_lint ;_;
+$black: #000 !global; //sass_lint ;_;
+$base-text-color: tint($black, 20) !global !default; //#333
+$light-text-color: tint($base-text-color, 50) !global !default; //#8f8f8f
+
+$grey: #6b6b6b !global !default;
+$grey-light: #e4e4e4 !global !default;
+$black-light: #232222 !global;
+$background-gallery: #303030 !global;
+
+$line-color: #dff1eb !global;
+$background-label:  #ececec !global !default;
+$primary-color: #e30613 !global !default; //#pumpkin
+$border-default-color: #ccc !global !default;
+$background-icon: #c3c3c3 !global !default;
+$page-background-color: #fff !global !default;
+$setback-background-color: #f3f3f3 !global !default;
+$table-background-color: $setback-background-color !global !default;
+$gallery-background-color: $setback-background-color !global !default;
+$gallery-indicator-bg: #e3e3e3 !global !default;
+$gallery-indicator-bg-active: $primary-color !global !default;
+$figure-of-the-day-color: #5c8796 !global !default; //"Maulwurf 1" https://Wirtschaftswoche-gmbh.atlassian.net/wiki/display/CD/Farben+Wirtschaftswoche.com
+
+$tag-default: $base-text-color !global !default;
+$tag-active: $primary-color !global !default;
+$tag-inactive: $light-text-color !global !default;
+
+$mail-color: $primary-color !global !default;
+$twitter-color: #1da1f2 !global;
+$xing-color: #005a5f !global;
+$whatsapp-color: #1b9d38 !global;
+$red:  #e30613 !global;
+$googleplus-color: #dc4e41 !global;
+$facebook-color: #3b5998 !global;
+
+// =============================================================================
+// General
+// =============================================================================
+$basic-multiplier: 10 !global !default;
+$border-default: unit-war(1) solid $background-icon !global !default; //#e8e8e8
+$border-table: unit-war(1) solid #b5b0b0 !global !default;
+$border-radius-default: unit-war(10) !global !default;
+$shadow-default-top-bottom: inset 0 unit-war(-2) unit-war(4) 0 transparentize($black, .75), inset 0 unit-war(2) unit-war(4) 0 transparentize($black, .75) !global !default;
+$transition-standard: .3s linear !global !default;
+
+$outer-padding-xs: unit-war(16) !global !default;
+$outer-padding-md: unit-war(89) !global !default;
+$outer-padding-lg: unit-war(174) !global !default;
+
+// =============================================================================
+// Typography
+// =============================================================================
+$font-size-base: $basic-multiplier * 1px !global !default;
+$font-size-default: 1.8rem !global !default;
+$font-size-text: $font-size-default !global !default;
+$font-size-button: $font-size-default !global !default;
+$font-family-sans: 'Mote Regular 2', 'Helvetica Neue', Helvetica, Arial, sans-serif !global !default;
+$font-family-serif: 'Mote Regular 2', 'Times New Roman', Times, serif !global !default;
+$mote-bold: 'Mote Bold 2', 'Times New Roman', Times, serif !global !default;
+$mote-medium: 'Mote Medium 2', 'Times New Roman', Times, serif !global !default;
+$mote-regular: 'Mote Regular 2', 'Times New Roman', Times, serif !global !default;
+$mote-semibold: 'Mote SemiBold 2', 'Times New Roman', Times, serif !global !default;
+$mote-light: 'Mote Regular 2', 'Times New Roman', Times, serif !global !default;
+$blanco: 'Blanco_Regular',  'Helvetica Neue', Helvetica, Arial, sans-serif !global !default;
+
+// =============================================================================
+// Logo as URI SVG (don't use base64 on svg!) https://dopiaza.org/tools/datauri/index.php
+// =============================================================================
+$logo: 'data:image/svg+xml,<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="106.000000pt" height="96.000000pt" viewBox="0 0 106.000000 96.000000"
+ preserveAspectRatio="xMidYMid meet">
+<metadata>
+Created by potrace 1.15, written by Peter Selinger 2001-2017
+</metadata>
+<g transform="translate(0.000000,96.000000) scale(0.100000,-0.100000)"
+fill="#e30613" stroke="none">
+<path d="M229 927 c-76 -19 -136 -40 -149 -52 -65 -59 -84 -173 -78 -454 4
+-178 7 -201 29 -255 13 -33 36 -68 50 -79 47 -34 251 -80 359 -80 95 0 456 53
+513 75 37 14 84 70 96 115 15 53 14 530 -1 574 -16 49 -45 87 -81 105 -45 24
+-365 75 -497 80 -105 4 -126 1 -241 -29z m170 -126 c47 -33 65 -68 69 -135 3
+-48 -1 -74 -16 -109 -20 -45 -20 -46 -1 -84 38 -74 15 -210 -43 -247 -41 -26
+-76 -28 -178 -11 l-100 18 0 55 0 54 43 -5 c175 -24 187 -21 187 42 0 59 -14
+70 -107 77 l-83 7 0 53 0 54 73 0 c92 0 117 15 117 70 0 45 -23 74 -54 66 -12
+-2 -56 -8 -99 -11 l-78 -7 3 53 3 53 90 17 c99 19 137 16 174 -10z m441 -170
+c0 -65 7 -71 78 -71 32 0 32 0 32 -49 l0 -50 -52 -3 -53 -3 -3 -62 -3 -63 -44
+0 -45 0 0 60 0 60 -60 0 -60 0 0 60 0 60 60 0 60 0 0 60 0 60 45 0 45 0 0 -59z"/>
+</g>
+</svg>
+
+' !global !default;
+
+// =============================================================================
+// Z-Indexes
+// =============================================================================
+
+// =============================================================================
+// Breakpoints
+// =============================================================================
+$screen-sm: 576px !global !default;
+$screen-sm-min: $screen-sm !global !default;
+$screen-tablet: $screen-sm-min !global !default;
+$screen-sm-small: 560px !global !default;
+
+$screen-md: 768px !global !default;
+$screen-md-min: $screen-md !global !default;
+$screen-desktop: $screen-md-min !global !default;
+
+$screen-lg: 1024px !global !default;
+$screen-lg-min: $screen-lg !global !default;
+$screen-lg-desktop: $screen-lg-min !global !default;
+
+$screen-xl: 1200px !global !default;
+$screen-xl-min: $screen-lg !global !default;
+$screen-xl-desktop: $screen-lg-min !global !default;
+
+$screen-xs-max: ($screen-sm-min - 1) !global !default;
+$screen-sm-max: ($screen-md-min - 1) !global !default;
+$screen-md-max: ($screen-lg-min - 1) !global !default;
+$screen-lg-max: ($screen-xl-min - 1) !global !default;

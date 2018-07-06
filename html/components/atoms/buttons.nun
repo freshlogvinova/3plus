@@ -1,0 +1,18 @@
+{% extends "components/atoms/atoms.nun" %}
+
+{% block subtitle %}Buttons{% endblock %}
+
+{% block main %}
+    <h2>Buttons</h2>
+    <h3>Standard</h3>
+    <div class="example">
+        <button>Abstimmen</button>
+    </div>
+    <pre><code></code></pre>
+
+    <h3>[disabled]</h3>
+    <div class="example">
+        <button disabled>Nope I'm disabled</button>
+    </div>
+    <pre><code class="language-markup"></code></pre>
+{% endblock %}

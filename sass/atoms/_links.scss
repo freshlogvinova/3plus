@@ -1,0 +1,19 @@
+@import '../variables';
+
+
+a {
+  background-color: transparent;
+  border-bottom: unit-war(1) dotted $primary-color;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-decoration: none;
+  transition: background-color $transition-standard, color $transition-standard;
+
+  &:hover {
+    background-color: $primary-color;
+    color: $page-background-color;
+  }
+}

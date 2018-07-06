@@ -1,0 +1,16 @@
+@import '../variables';
+
+.button, button {
+  background: $primary-color;
+  border: 0;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 500;
+  height: 36px;
+  line-height: 36px;
+  margin: 23px auto;
+  max-width: 288px;
+  outline: none;
+  width: 100%;
+}

@@ -1,0 +1,49 @@
+// functions in this file MUST NOT render code - e.g. this file must not render code when imported
+
+// DO NOT MIX THIS WITH VARIABLES OR MIXINS!!
+
+// 'tint' and 'shade' where taken from compass by Chris Eppstein
+
+$white: #fff;
+$black: #000;
+
+/// Slightly lighten a color
+/// @access public
+/// @author Chris Eppstein
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function tint($color, $percentage) {
+  @return mix($white, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @access public
+/// @author Chris Eppstein
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function shade($color, $percentage) {
+  @return mix($black, $color, $percentage);
+}
+
+/// Uses the unit of your choice, to end the war of units. Currently uses bulletproof pixel.<br>
+/// **Whait! I read that pt / rem / em / cm / foo Units are much better than pixel!!!111oneeleven**<br>
+/// *OK then this is the place to change all non typography related values into you favorite unit at once*<br>
+/// <br>
+/// **_You are welcome_**
+/// @access public
+/// @author Jannis
+/// @param {Number} $pixel [0] - input in pixel
+/// @return {Number} Your favorite unit
+@function unit-war($pixel: 0) {
+  @return $pixel * 1px;
+
+  // If you prefer for example rem, then change it to:
+  // @return (($pixel / 10) * 1rem);
+  // poof rem everywhere
+
+  // BUT - if you are agnostic enough, read these:
+  // http://stackoverflow.com/questions/11799236/should-i-use-px-or-rem-value-units-in-my-css
+  // https://mindtheshift.wordpress.com/2015/04/02/r-i-p-rem-viva-css-reference-pixel/
+};

@@ -1,0 +1,99 @@
+/// Add clearfix hack
+/// @author Jannis Hell
+@mixin clearfix {
+  &::before,
+  &::after {
+    content: ' ';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+/// Adds a breakpoint for predefined devices or creates a custom one <br>
+/// **xs** -> extra small screens, phone, default (0 - 575) <br>
+/// **sm** -> intermediate screens, big phones, small tablets (576 - 767) <br>
+/// **md** -> small screen, tablet (768 - 1023) <br>
+/// **lg** -> medium screen, desktop (1024 - 1199) <br>
+/// **xl** -> large screen, wide desktop (1200 - infinite) <br><br>
+/// **portrait** -> devices in portrait orientation <br>
+/// **landscape** -> devices in landscape orientation <br><br>
+/// **{pixel}** -> custom breakpoint with min-width {pixel} <br>
+/// @author Jannis Hell
+/// @param {String | Number} $device - name of the breakpoint OR custom pixel amount e.g. 600px
+/// @content
+@mixin breakpoint($device) {
+  @if ($device == xs) {
+    // until 575
+    @media only screen and (max-width: $screen-xs-max) {
+      @content;
+    }
+  } @else if ($device == sm-small) {
+    // max 480px
+    @media only screen and (max-width: $screen-sm-small) {
+      @content;
+    }
+  }  @else if ($device == sm) {
+    // from 576px
+    @media only screen and (min-width: $screen-sm-min) {
+      @content;
+    }
+  } @else if ($device == md) {
+    // from 768px
+    @media only screen and (min-width: $screen-md-min) {
+      @content;
+    }
+  } @else if ($device == lg) {
+    // from 1024px
+    @media only screen and (min-width: $screen-lg-min) {
+      @content;
+    }
+  } @else if ($device == xl) {
+    // from 1200px - open end
+    @media only screen and (min-width: $screen-xl-min) {
+      @content;
+    }
+  } @else if ($device == ll) {
+    // from 1200px - open end
+    @media only screen and (min-width: $screen-xl) {
+      @content;
+    }
+  }  @else if ($device == portrait) {
+    // devices in portrait orientation
+    @media only screen and (orientation: portrait) {
+      @content;
+    }
+  } @else if ($device == landscape) {
+    // devices in landscape orientation
+    @media only screen and (orientation: landscape) {
+      @content;
+    }
+  } @else {
+    //custom breakpoint
+    @media only screen and (min-width: $device * 1px) {
+      @content;
+    }
+  }
+}
+
+/// adds styles for a one liner where overlapping text is hidden with...
+/// @author Jannis Hell
+@mixin make-one-liner {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/// Make element unselectable (text selection)
+/// @author Jannis Hell
+@mixin noselect {
+  // sass-lint:disable-block no-vendor-prefixes no-misspelled-properties
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}

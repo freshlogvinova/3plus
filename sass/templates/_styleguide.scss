@@ -1,0 +1,109 @@
+@import "../variables";
+
+.styleguide {
+  padding: 25px;
+
+  > aside {
+    @include breakpoint(lg) {
+      height: 100vh;
+      overflow-y: auto;
+      padding: 20px 20px 20px 0;
+      position: fixed;
+      top: 0;
+      width: 19%;
+    }
+
+    nav {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 3px solid $primary-color;
+      height: 100%;
+
+      a {
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+
+      li {
+        margin-left: 20px;
+      }
+    }
+
+    > .logo {
+      background: transparent url($logo) no-repeat;
+      background-size: contain;
+      height: 50px;
+      background-position: center;
+    }
+  }
+
+  h1 {
+    font-size: 3rem;
+    line-height: 3.6rem;
+    font-weight: bold;
+    padding-bottom: 2.4rem;
+  }
+
+
+  > main {
+    @include breakpoint(lg) {
+      padding-left: 22%;
+      width: 100%;
+    }
+
+    > {
+      h1,
+      h2,
+      h3 {
+        text-align: left;
+      }
+    }
+
+    > header {
+      h1,
+      h2 {
+        display: inline;
+      }
+    }
+
+    iframe {
+      max-width: 100%;
+    }
+  }
+
+  .example {
+    @include clearfix;
+    border: $border-default;
+    border-bottom: 0;
+    border-top-left-radius: $border-radius-default;
+    border-top-right-radius: $border-radius-default;
+    overflow-x: hidden;
+    padding: 10px;
+
+    + pre {
+      @include clearfix;
+      border: $border-default;
+      border-bottom-left-radius: $border-radius-default;
+      border-bottom-right-radius: $border-radius-default;
+      border-top: 0;
+      line-height: 110%;
+      margin: 0 auto 30px;
+      padding-top: 0;
+
+      @include breakpoint(xs) {
+        background: transparent;
+        height: $border-radius-default;
+        overflow: hidden;
+        padding: 0;
+      }
+    }
+
+
+    .type-image-gallery-item {
+      img {
+        height: inherit;
+        width: 100%;
+      }
+    }
+  }
+}

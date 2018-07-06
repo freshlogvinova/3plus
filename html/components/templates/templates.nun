@@ -1,0 +1,17 @@
+{% extends "index.nun" %}
+
+{% block title %}Templates{% endblock %}
+
+{% block menu %}
+    <ul>
+        <li><a href="/components/atoms/atoms.html">Atoms</a></li>
+        <li><a href="/components/molecules/molecules.html">Molecules</a></li>
+        <li><a href="/components/organisms/organisms.html">Organisms</a>
+        <li><a>Templates</a>
+            <ul>
+                <li><a href="#">Base template</a></li>
+            </ul>
+        </li>
+        <li><a href="/components/pages/pages.html">Pages</a></li>
+    </ul>
+{% endblock %}
